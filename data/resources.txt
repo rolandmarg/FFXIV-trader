@@ -1,0 +1,5 @@
+https://github.com/xivapi/ffxiv-datamining/blob/master/csv/Recipe.csv
+
+https://universalis.app/docs/index.html
+
+https://raw.githubusercontent.com/ffxiv-teamcraft/ffxiv-teamcraft/master/apps/client/src/assets/data/items.json
