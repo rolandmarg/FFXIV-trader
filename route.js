@@ -1,5 +1,5 @@
 const fs = require('fs');
-const {getItemName} = require('./recipe');
+const {getItemName} = require('./src/entity/recipe');
 
 function calculateRoute(shoppingList, worthHop = 3000) {
   const [route, ingredients, craft] = calculateRouteInternal(shoppingList, worthHop);

@@ -1,7 +1,7 @@
-const {calculateRoute} = require('../route');
-const {getItems} = require('../recipe');
-const {calculateProfit} = require("../profit");
-const {calculateCraftingPrice} = require("../price");
+const { calculateRoute } = require('../route');
+const { getItems } = require('../src/entity/recipe');
+const { calculateProfit } = require("../src/profit");
+const { calculateCraftingPrice } = require("../src/market");
 
 const skybuilderScrips = [
   "Grade 4 Skybuilders' Brazier",
@@ -364,16 +364,21 @@ const shitThatSells = [
   "Quaintrelle's Ruffled Skirt",
   "Boulevardier's Ruffled Shirt"
 ];
+const temp = [
+  "With Hearts Aligned Orchestrion Roll",
+  "The Final Day Orchestrion Roll",
+];
+
 async function bootstrap() {
   const amount = 1;
-  const items = getItems(shitThatSells);
+  const items = getItems(temp);
 
   items.forEach(i => i.amount = amount);
 
   const profits = (await calculateProfit(items));
   const shoppingList = [];
   for (const profit of profits) {
-    shoppingList.push(await calculateCraftingPrice({id: profit.crafted.id, name: profit.crafted.name, amount}));
+    shoppingList.push(await calculateCraftingPrice({ id: profit.crafted.id, name: profit.crafted.name, amount }));
   }
   await calculateRoute(shoppingList);
 }

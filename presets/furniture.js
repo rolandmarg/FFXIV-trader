@@ -1,7 +1,7 @@
 const {calculateRoute} = require('../route');
-const {getItems} = require('../recipe');
-const {calculateProfit} = require("../profit");
-const {calculateCraftingPrice} = require("../price");
+const {getItems} = require('../src/entity/recipe');
+const {calculateProfit} = require("../src/profit");
+const {calculateCraftingPrice} = require("../src/market");
 
 const list = [
   "Living Arch",
