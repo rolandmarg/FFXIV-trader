@@ -1,4 +1,4 @@
-const {calculatePrice} = require("../price");
+const {calculatePrice} = require("../src/market");
 
 const expensiveItems = [
   "Boutique Batiste",

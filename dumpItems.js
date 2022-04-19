@@ -1,6 +1,6 @@
 const axios = require('axios');
-const {getItems} = require('./recipe');
-const {calculatePrice} = require("./price");
+const {getItems} = require('./src/entity/recipe');
+const {calculatePrice} = require("./src/market");
 const fs = require("fs");
 
 async function bootstrap() {
