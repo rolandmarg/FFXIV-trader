@@ -17,16 +17,18 @@ function get({ id, amount }) {
     yieldResult: recipe.yieldResult,
     level: recipe.level,
     ingredients: ingredients(recipe, amount),
-    materials: ingredients(recipe, amount).filter(i => !exists(i.id)),
-    prerequisites: ingredients(recipe, amount).filter(i => exists(i.id)),
-  }
+    materials: ingredients(recipe, amount).filter((i) => !exists(i.id)),
+    prerequisites: ingredients(recipe, amount).filter((i) => exists(i.id)),
+  };
 }
 
 function ingredients(recipe, amount) {
   const total = [];
-  recipe.ingredients.forEach(ingredient => {
+  recipe.ingredients.forEach((ingredient) => {
     // TODO fix yield amount logic
-    const amountNeeded = Math.ceil(amount * ingredient.amount / recipe.yieldResult);
+    const amountNeeded = Math.ceil(
+      (amount * ingredient.amount) / recipe.yieldResult
+    );
 
     const rec = data.recipe.get(ingredient.id);
     // if ingredient is a recipe get its ingredients recursively
@@ -44,4 +46,4 @@ function ingredients(recipe, amount) {
 module.exports = {
   get,
   exists,
-}
+};

@@ -1,7 +1,8 @@
 const utils = require('../utils');
 
 const filePath = './data/ids.json';
-const fileUrl = 'https://raw.githubusercontent.com/ffxiv-teamcraft/ffxiv-teamcraft/master/apps/client/src/assets/data/items.json';
+const fileUrl =
+  'https://raw.githubusercontent.com/ffxiv-teamcraft/ffxiv-teamcraft/master/apps/client/src/assets/data/items.json';
 
 let itemNames;
 let itemIds;
@@ -19,7 +20,7 @@ async function load() {
       }
       itemIds[lang][name] = id;
     });
-  })
+  });
 }
 
 function name(id, lang = 'en') {
@@ -33,5 +34,5 @@ function id(name, lang = 'en') {
 module.exports = {
   load,
   name,
-  id
+  id,
 };

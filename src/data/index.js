@@ -3,5 +3,5 @@ const item = require('./item');
 
 module.exports = {
   recipe,
-  item
-}
+  item,
+};

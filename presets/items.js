@@ -1,15 +1,12 @@
-const {calculatePrice} = require("../src/market");
+const { calculatePrice } = require('../src/market');
 
 const expensiveItems = [
-  "Boutique Batiste",
-  "shell leather",
-  "calf leather",
-  "Eldthurs Horn"
-
+  'Boutique Batiste',
+  'shell leather',
+  'calf leather',
+  'Eldthurs Horn',
 ];
 
-async function bootstrap() {
-}
-
+async function bootstrap() {}
 
 bootstrap();
